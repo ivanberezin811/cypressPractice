@@ -1,7 +1,7 @@
 describe('Dropdown List', () => {
 
     beforeEach(() => {
-        cy.visit('https://the-internet.herokuapp.com')
+        cy.visit('/')
         cy.get('[href="/dropdown"]').click()
         cy.get('h3').should('have.text', 'Dropdown List')
     });

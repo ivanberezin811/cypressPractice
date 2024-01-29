@@ -1,7 +1,7 @@
 describe('Form Authentication', () => {
 
    beforeEach(() => {
-      cy.visit('https://the-internet.herokuapp.com')
+      cy.visit('/')
       cy.get('[href="/login"]').click()
    });
 

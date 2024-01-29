@@ -1,7 +1,7 @@
 describe('Checkboxes', () => {
 
     beforeEach(() => {
-        cy.visit('https://the-internet.herokuapp.com')
+        cy.visit('/')
         cy.get('[href="/checkboxes"]').click()
         cy.get('h3').should('have.text', 'Checkboxes');
     });
