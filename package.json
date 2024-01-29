@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "e2e:open": "npx cypress open",
+    "e2e:run:allSpecs:chrome": "npx cypress run --browser chrome",
+    "e2e:run:allSpecs:firefox": "npx cypress run --browser firefox",
+    "e2e:run:allSpecs:headless": "npx cypress run --browser browserName --headless",
+    "e2e:run:specificSpec": "npx cypress run --spec pathToSpec"
   },
   "author": "",
   "license": "ISC",
