@@ -5,7 +5,7 @@ describe('Form Authentication', () => {
       cy.get('[href="/login"]').click()
    });
 
-   it('Should verify inability to login with invalid credentials',  function () {
+   it('Should verify inability to login with invalid credentials', { tags: '@smoke' },  function () {
       cy.get('#username').type('testUser123123')
       cy.get('#password').type('testPassword12313')
       cy.get('[type="submit"]').click()
