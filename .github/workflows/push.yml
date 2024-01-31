@@ -12,3 +12,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npm run e2e:run:cypress:dashboard
+          record: true
+        env:
+          # pass the Cypress Cloud record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
