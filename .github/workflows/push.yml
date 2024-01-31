@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Cypress run
-      - run: npm run e2e:run:chrome:regression
+        run: npm run e2e:run:chrome:regression
           #uses: cypress-io/github-action@v6
           #with:
         #record: true
