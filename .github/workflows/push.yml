@@ -9,9 +9,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          record: true
+      - run: npm run e2e:run:chrome:regression
+          #uses: cypress-io/github-action@v6
+          #with:
+        #record: true
         env:
           # pass the Cypress Cloud record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
