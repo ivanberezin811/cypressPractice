@@ -1,7 +1,10 @@
-image: cypress/base:12
+variables:
+  PROJECT_ID: 'h9vho8'
+  CYPRESS_RECORD_KEY: '$CYPRESS_RECORD_KEY'
 
+image: cypress/browsers:latest
 test:
   stage: test
   script:
     - npm install
-    - npm run e2e:run:chrome:regression
+    - npm run e2e:run:cypress:dashboard
