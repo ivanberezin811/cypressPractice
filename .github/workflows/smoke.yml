@@ -8,13 +8,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Smoke tests
-        uses: cypress-io/github-action@v6
+      - name: Run smoke tests
+        uses: ./
         with:
-          record: true
-          group: '2 - smoke tests'
-          env: grepTegs=@smoke
-          tag: smoke
+          command: npm run e2e:run:cypress:dashboard:smoke
         env:
           # pass the Cypress Cloud record key as an environment variable
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
