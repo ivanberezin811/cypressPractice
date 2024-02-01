@@ -6,7 +6,7 @@ describe('Checkboxes', () => {
         cy.get('h3').should('have.text', 'Checkboxes');
     });
 
-    it('Should verify default checkboxes state',  function () {
+    it('Should verify default checkboxes state', { tags: '@smoke' }, function () {
         cy.get('[type="checkbox"]').first().should('not.be.checked')
         cy.get('[type="checkbox"]').last().should('be.checked')
     });

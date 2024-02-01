@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "e2e:open": "npx cypress open",
-    "e2e:run:allSpecs:chrome": "npx cypress run --browser chrome",
-    "e2e:run:allSpecs:firefox": "npx cypress run --browser firefox",
-    "e2e:run:allSpecs:headless": "npx cypress run --browser browserName --headless",
+    "e2e:open:cypressRunner": "npx cypress open",
+    "e2e:run:chrome:regression": "npx cypress run --browser chrome",
+    "e2e:run:firefox:regression": "npx cypress run --browser firefox",
+    "e2e:run:chrome:smoke": "npx cypress run --env grepTags=@smoke --browser chrome",
     "e2e:run:specificSpec": "npx cypress run --spec pathToSpec",
-    "e2e:run:cypress:dashboard": "dotenv -- cross-var npx cypress run --record --key %CY_DASHBOARD_KEY% --tag Regression"
+    "e2e:run:cypress:dashboard": "dotenv -- cross-var npx cypress run --record --key %CYPRESS_RECORD_KEY% --tag Regression"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cypress/grep": "^4.0.1",
     "cross-var": "^1.1.0",
     "cypress": "^13.6.3",
     "cypress-real-events": "^1.11.0",
