@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress Workflow
 
 on: pull_request
 
@@ -11,6 +11,7 @@ jobs:
       - name: Regression tests
         uses: cypress-io/github-action@v6
         with:
+          browser: chrome
           record: true
           group: '2 - regression tests'
           tag: regression
