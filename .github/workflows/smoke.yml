@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run smoke tests
-        uses: ./
+        uses: cypress-io/github-action@v6
         with:
           command: npm run e2e:run:cypress:dashboard:smoke
         env:
