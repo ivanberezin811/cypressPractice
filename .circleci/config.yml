@@ -1,12 +1,9 @@
-version: '2.1'
+version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.29.0
+  cypress: cypress-io/cypress@3
 workflows:
-  build:
+  test:
     jobs:
-      - cypress/install:
-          install-command: npm install --frozen-lockfile
       - cypress/run:
-          command: npm run e2e:run:chrome:regression
-          requires:
-            - cypress/install
+          install-browsers: true
+          start-command: npm run e2e:run:chrome:regression
