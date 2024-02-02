@@ -2,8 +2,8 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@3
 workflows:
-  test:
+  build:
     jobs:
-      - cypress/run:
-          install-browsers: true
-          start-command: npm run e2e:run:chrome:regression
+      - cypress/run
+        install-browsers: true
+        start-command: 'npm run e2e:run:chrome:regression'
