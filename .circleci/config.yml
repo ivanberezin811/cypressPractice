@@ -3,9 +3,9 @@ orbs:
   cypress: cypress-io/cypress@3
 workflows:
   build:
-    environment:
-      PROJECT_ID: $PROJECT_ID
     jobs:
       - cypress/run:
+          environment:
+            PROJECT_ID: $PROJECT_ID
           #install-browsers: true
           cypress-command: 'npm run e2e:run:cypress:dashboard:ci'
