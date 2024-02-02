@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    environment:
+      CYPRESS_RECORD_KEY: $CYPRESS_RECORD_KEY
+      PROJECT_ID: $PROJECT_ID
+    jobs:
+      - cypress/run:
+          command: npm run e2e:run:cypress:dashboard
+          browser: chrome
