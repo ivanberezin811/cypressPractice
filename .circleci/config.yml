@@ -2,8 +2,8 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@3
 workflows:
-  build:
+  smoke:
     jobs:
       - cypress/run:
-          #install-browsers: true
-          cypress-command: 'npm run e2e:run:cypress:dashboard'
+          install-browsers: true
+          cypress-command: 'npm run e2e:run:cypress:dashboard:smoke'
