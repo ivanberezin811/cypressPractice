@@ -3,6 +3,8 @@ orbs:
   cypress: cypress-io/cypress@3
 workflows:
   build:
+    environment:
+      PROJECT_ID: $PROJECT_ID
     jobs:
       - cypress/run:
           #install-browsers: true
