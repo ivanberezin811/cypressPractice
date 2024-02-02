@@ -5,5 +5,4 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          command: npm run e2e:run:cypress:dashboard
-          browser: chrome
+          command: npm run e2e:run:chrome:regression
