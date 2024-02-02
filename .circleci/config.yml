@@ -4,5 +4,9 @@ orbs:
 workflows:
   build:
     jobs:
+      - cypress/install:
+          install-command: npm install --frozen-lockfile
       - cypress/run:
           command: npm run e2e:run:chrome:regression
+          requires:
+            - cypress/install
