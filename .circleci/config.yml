@@ -5,5 +5,5 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          install-browsers: true
-          cypress-command: 'npm run e2e:run:chrome:regression'
+          #install-browsers: true
+          cypress-command: 'npm run e2e:run:cypress:dashboard:ci'
