@@ -9,8 +9,8 @@
     "e2e:run:firefox:regression": "npx cypress run --browser firefox",
     "e2e:run:chrome:smoke": "npx cypress run --env grepTags=@smoke --browser chrome",
     "e2e:run:specificSpec": "npx cypress run --spec pathToSpec",
-    "e2e:run:cypress:dashboard": "npx cypress run --record --tag Regression",
-    "e2e:run:cypress:dashboard:smoke": "npx cypress run --record --env grepTags=@smoke --browser chrome --tag smoke"
+    "e2e:run:cypress:dashboard": "dotenv npx cypress run --record --tag Regression",
+    "e2e:run:cypress:dashboard:smoke": "dotenv npx cypress run --record --env grepTags=@smoke --browser chrome --tag smoke"
   },
   "author": "",
   "license": "ISC",
