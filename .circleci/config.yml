@@ -6,4 +6,4 @@ workflows:
     jobs:
       - cypress/run:
           install-browsers: true
-          cypress-command: 'npm run e2e:run:cypress:dashboard:smoke'
+          cypress-command: 'npm run e2e:ci:cypress:dashboard:smoke'
