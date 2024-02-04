@@ -8,6 +8,9 @@ pipeline {
 
     stages {
         stage('Download the dependencies') {
+            environment {
+                HOME="."
+            }
             steps {
                 sh "npm install"
             }
