@@ -1,6 +1,6 @@
-pipleline {
+pipeline {
     agent {
-        doker {
+        docker {
             image 'cypress/base:12'
             //only when running Jenkins locally
             args '-u root:root'
