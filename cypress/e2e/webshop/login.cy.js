@@ -8,20 +8,23 @@ describe('Login', function () {
     });
 
     it('Should verify successful login', { tags: '@smoke' }, function () {
-        cy.get('#Email').type(this.usersData.user1.email)
-        cy.get('#Password').type(this.usersData.user1.password)
-        cy.get('.login-button').click()
+        cy.loginToWebShop(this.usersData.user1)
+
         cy.get('.header-links [href="/customer/info"]').should('have.text', this.usersData.user1.email)
     });
 
     it('Should verify unsuccessful login with empty password', function () {
-        cy.get('#Email').type(this.usersData.user1.email)
-        cy.get('.login-button').click()
+        this.usersData.user1.password = undefined
+        cy.loginToWebShop(this.usersData.user1)
+
         cy.get('.validation-summary-errors').should('contain.text', 'The credentials provided are incorrect')
     });
 
     it('Should verify unsuccessful login with empty email and password', function () {
-        cy.get('.login-button').click()
+        this.usersData.user1.email = undefined
+        this.usersData.user1.password = undefined
+        cy.loginToWebShop(this.usersData.user1)
+
         cy.get('.validation-summary-errors').should('contain.text', 'No customer account found')
     });
 

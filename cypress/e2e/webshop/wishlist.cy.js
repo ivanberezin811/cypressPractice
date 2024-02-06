@@ -8,9 +8,7 @@ describe('Login', () => {
         //Login
         cy.get('.ico-login').click()
         cy.get('.page-title').should('contain.text', 'Welcome, Please Sign In!')
-        cy.get('#Email').type(user1.email)
-        cy.get('#Password').type(user1.password)
-        cy.get('.login-button').click()
+        cy.loginToWebShop(user1)
 
         //Cleanup of wishlist
         cy.get('.header-links .ico-wishlist').click()
