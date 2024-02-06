@@ -1,4 +1,5 @@
-import {user1} from "../../../webShopData/users";
+import { user1 } from "../../fixtures/users.json";
+
 
 describe('Login', () => {
 

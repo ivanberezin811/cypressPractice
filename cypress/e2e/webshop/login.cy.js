@@ -1,22 +1,21 @@
-import { user1 } from '../../../webShopData/users'
+describe('Login', function () {
 
-describe('Login', () => {
-
-    beforeEach(() => {
+    beforeEach(function () {
         cy.visit('https://demowebshop.tricentis.com')
         cy.get('.ico-login').click()
         cy.get('.page-title').should('contain.text', 'Welcome, Please Sign In!')
+        cy.fixture('users').as('usersData')
     });
 
     it('Should verify successful login', { tags: '@smoke' }, function () {
-        cy.get('#Email').type(user1.email)
-        cy.get('#Password').type(user1.password)
+        cy.get('#Email').type(this.usersData.user1.email)
+        cy.get('#Password').type(this.usersData.user1.password)
         cy.get('.login-button').click()
-        cy.get('.header-links [href="/customer/info"]').should('have.text', user1.email)
+        cy.get('.header-links [href="/customer/info"]').should('have.text', this.usersData.user1.email)
     });
 
     it('Should verify unsuccessful login with empty password', function () {
-        cy.get('#Email').type(user1.email)
+        cy.get('#Email').type(this.usersData.user1.email)
         cy.get('.login-button').click()
         cy.get('.validation-summary-errors').should('contain.text', 'The credentials provided are incorrect')
     });
