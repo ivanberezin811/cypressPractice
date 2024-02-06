@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("loginToWebShop", (user, clickLogin = true) => {
+    if(user.email) cy.get('#Email').type(user.email)
+    if(user.password) cy.get('#Password').type(user.password)
+    if(clickLogin) cy.get('.login-button').click()
+})
