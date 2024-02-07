@@ -1,19 +1,19 @@
-import { user1 } from "../../fixtures/users.json";
-import *  as HeaderPage from "../../pages/headerPage";
-import *  as LogInPage from "../../pages/loginPage";
-import *  as WishlistPage from "../../pages/wishlistPage";
-import *  as JewelryPage from "../../pages/jewelryPage";
-import *  as NotificationPage from "../../pages/notificationPage";
-
+import { user1 } from '../../fixtures/users.json';
+import *  as HeaderPage from '../../pages/headerPage';
+import *  as LogInPage from '../../pages/loginPage';
+import *  as WishlistPage from '../../pages/wishlistPage';
+import *  as JewelryPage from '../../pages/jewelryPage';
+import *  as NotificationPage from '../../pages/notificationPage';
+import *  as Utils from '../../support/utils';
+import { webshopData } from '../../fixtures/webshopData';
+const jewelryAttributes = webshopData.jewelryAttributes;
 
 describe('Should verify wishlist functionality', () => {
 
     beforeEach(() => {
-        cy.visit('https://demowebshop.tricentis.com')
-        //Login
-        HeaderPage.logInLink().click()
+        Utils.visitPage('/login')
         LogInPage.title().should('contain.text', 'Welcome, Please Sign In!')
-        cy.loginToWebShop(user1)
+        LogInPage.performLogin(user1)
 
         //Cleanup of wishlist
         HeaderPage.wishlistLink().click()
@@ -28,13 +28,6 @@ describe('Should verify wishlist functionality', () => {
     it('Should verify successful adding a product to wishlist', { tags: '@smoke' }, function () {
         HeaderPage.jewelryLink().click()
         JewelryPage.jewelryLinkCreateOwn().click()
-
-        const jewelryAttributes = {
-            material: 'Gold (1 mm)',
-            length: '15',
-            pendant: 'Ladybug',
-            qty: '3'
-        }
 
         //Fill product form
         JewelryPage.materialDropdown().select(jewelryAttributes.material)
