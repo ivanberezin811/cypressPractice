@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'cypress/base:12'
+            image 'cypress/base:latest'
             args '-u root:root'
         }
     }
@@ -16,9 +16,9 @@ pipeline {
             }
         }
 
-        stage('Build and test') {
+        stage('Run test') {
             steps {
-                sh "npm run e2e:run:chrome:regression"
+                sh "npm run e2e:run:cypress:dashboard"
             }
         }
     }
