@@ -24,9 +24,3 @@ import *  as LogInPage from "../pages/loginPage";
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-Cypress.Commands.add("loginToWebShop", (user, clickLogin = true) => {
-    if(user.email) LogInPage.emailInput().type(user.email)
-    if(user.password) LogInPage.passwordInput().type(user.password)
-    if(clickLogin) LogInPage.loginButton().click()
-})
