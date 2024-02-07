@@ -1,7 +1,7 @@
 describe('Hovers', () => {
 
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('https://the-internet.herokuapp.co')
         cy.get('[href="/hovers"]').click()
     });
 
