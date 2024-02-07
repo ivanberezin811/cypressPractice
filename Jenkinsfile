@@ -2,15 +2,12 @@ pipeline {
     agent {
         docker {
             image 'cypress/base:latest'
-            args '-u root:root'
+            args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm'
         }
     }
 
     stages {
         stage('Download the dependencies') {
-            environment {
-                HOME="."
-            }
             steps {
                 sh "npm install"
             }
