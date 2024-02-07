@@ -1,6 +1,5 @@
 import { user1 } from '../../fixtures/users.json';
 import *  as HeaderPage from '../../pages/headerPage';
-import *  as LogInPage from '../../pages/loginPage';
 import *  as WishlistPage from '../../pages/wishlistPage';
 import *  as JewelryPage from '../../pages/jewelryPage';
 import *  as NotificationPage from '../../pages/notificationPage';
@@ -11,9 +10,9 @@ const jewelryAttributes = webshopData.jewelryAttributes;
 describe('Should verify wishlist functionality', () => {
 
     beforeEach(() => {
-        Utils.visitPage('/login')
-        LogInPage.title().should('contain.text', 'Welcome, Please Sign In!')
-        LogInPage.performLogin(user1)
+        Utils.loginViaAPI(user1)
+        Utils.visitPage('/')
+        HeaderPage.userEmailLink().should('have.text', user1.email)
 
         //Cleanup of wishlist
         HeaderPage.wishlistLink().click()
