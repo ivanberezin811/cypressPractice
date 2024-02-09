@@ -1,11 +1,13 @@
-import { user1 } from '../../fixtures/users.json';
+import { users } from '../../fixtures/users.js';
 import *  as HeaderPage from '../../pages/headerPage';
 import *  as WishlistPage from '../../pages/wishlistPage';
 import *  as JewelryPage from '../../pages/jewelryPage';
 import *  as NotificationPage from '../../pages/notificationPage';
 import *  as Utils from '../../support/utils';
 import { webshopData } from '../../fixtures/webshopData';
+
 const jewelryAttributes = webshopData.jewelryAttributes;
+const user1 = users.user1;
 
 describe('Should verify wishlist functionality', () => {
 
