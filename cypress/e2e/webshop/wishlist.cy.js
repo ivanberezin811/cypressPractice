@@ -27,7 +27,7 @@ describe('Should verify wishlist functionality', () => {
     });
 
     it('Should verify successful adding a product to wishlist', { tags: '@smoke' }, function () {
-        HeaderPage.jewelryLink().click()
+        HeaderPage.productByName('jewelry').click()
         JewelryPage.jewelryLinkCreateOwn().click()
 
         //Fill product form
