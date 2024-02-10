@@ -16,5 +16,11 @@ module.exports.webshopData = {
         highToLow: 'Price: High to Low',
         nameAtoZ: 'Name: A to Z',
         nameZtoA: 'Name: Z to A'
+    },
+
+    filterByConditions: {
+        under1000: 'Under1000',
+        from100To1200: 'From1000To1200',
+        over1200: 'Over1200'
     }
 }

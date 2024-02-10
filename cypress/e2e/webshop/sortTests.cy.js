@@ -26,7 +26,7 @@ describe('Should verify sorting functionality', () => {
         CommonPage.verifySortingBy('Low to High')
     })
 
-    it('Should verify sorting by Price: High to Low', { tags: '@smoke' }, function () {
+    it('Should verify sorting by Price: High to Low', function () {
         HeaderPage.productByName('computers').click()
         ComputerPage.productByName('desktops').click()
         CommonPage.sortByDropdown().select(sortByOptions.highToLow)
@@ -38,5 +38,12 @@ describe('Should verify sorting functionality', () => {
         ComputerPage.productByName('desktops').click()
         CommonPage.sortByDropdown().select(sortByOptions.nameAtoZ)
         CommonPage.verifySortingBy('A to Z')
+    })
+
+    it('Should verify sorting by Name: Z to A', function () {
+        HeaderPage.productByName('computers').click()
+        ComputerPage.productByName('desktops').click()
+        CommonPage.sortByDropdown().select(sortByOptions.nameZtoA)
+        CommonPage.verifySortingBy('Z to A')
     })
 });
